@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CVEntities">
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="Model.Adres">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adres1" ColumnName="Adres" />
+          <ScalarProperty Name="Konum" ColumnName="Konum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calismalarim">
+      <EntityTypeMapping TypeName="Model.Calismalarim">
+        <MappingFragment StoreEntitySet="Calismalarim">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hakkimda">
+      <EntityTypeMapping TypeName="Model.Hakkimda">
+        <MappingFragment StoreEntitySet="Hakkimda">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bilgiler" ColumnName="Bilgiler" />
+          <ScalarProperty Name="Egitim" ColumnName="Egitim" />
+          <ScalarProperty Name="IsDeneyimleri" ColumnName="IsDeneyimleri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="İletisim">
+      <EntityTypeMapping TypeName="Model.İletisim">
+        <MappingFragment StoreEntitySet="İletisim">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetenekler">
+      <EntityTypeMapping TypeName="Model.Yetenekler">
+        <MappingFragment StoreEntitySet="Yetenekler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+          <ScalarProperty Name="Derece" ColumnName="Derece" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

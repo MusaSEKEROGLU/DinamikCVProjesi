@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adres1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Konum" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Calismalarim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Hakkimda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bilgiler" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Egitim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeneyimleri" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="İletisim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mesaj" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KayıtTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Yetenekler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yetenek" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Derece" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adres" EntityType="Self.Adres" />
+    <EntitySet Name="Calismalarim" EntityType="Self.Calismalarim" />
+    <EntitySet Name="Hakkimda" EntityType="Self.Hakkimda" />
+    <EntitySet Name="İletisim" EntityType="Self.İletisim" />
+    <EntitySet Name="Register" EntityType="Self.Register" />
+    <EntitySet Name="Yetenekler" EntityType="Self.Yetenekler" />
+    <FunctionImport Name="spLogin">
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Şifre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spRegister">
+      <Parameter Name="AdSoyad" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Şifre" Mode="In" Type="String" />
+      <Parameter Name="KayıtTarihi" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
